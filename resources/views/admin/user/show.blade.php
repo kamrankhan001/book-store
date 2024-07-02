@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit User')
+@section('title', 'User')
 
 @section('main')
 <div class="container" style="height: 100vh">

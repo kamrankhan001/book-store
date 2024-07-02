@@ -128,7 +128,7 @@
                                     class="hide-menu">Dashboard</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('book.index')}}"
                                 aria-expanded="false"><i class="fas fa-address-book"></i><span
                                     class="hide-menu">Books</span></a>
                         </li>
