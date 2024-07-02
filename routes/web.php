@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\Admin\UserController;
+
 
 Route::get('/', function () {
     return view('leading');
@@ -10,13 +14,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// User Routes
 Route::middleware(['auth', 'access-level:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
   
-// admin routes
+// Admin Routes
 Route::middleware(['auth', 'access-level:admin'])->group(function () {
   
-    Route::get('/admin/dashboard', [HomeController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 });

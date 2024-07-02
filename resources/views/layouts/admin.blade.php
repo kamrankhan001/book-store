@@ -38,7 +38,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{route('admin.dashboard')}}">
                         <!-- Logo icon -->
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -123,9 +123,28 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.dashboard"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.dashboard')}}"
                                 aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                aria-expanded="false"><i class="fas fa-address-book"></i><span
+                                    class="hide-menu">Books</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                aria-expanded="false"><i class="fas fa-user"></i><span
+                                    class="hide-menu">Users</span></a>
+                        </li>
+                        <div class="class="dropdown-divider"></div>
+                        <li class="sidebar-item">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="sidebar-link waves-effect waves-dark sidebar-link btn w-100" href="{"
+                                    aria-expanded="false"><i class="fa fa-power-off"></i><span
+                                        class="hide-menu">Logout</span></button>
+                            </form>
                         </li>
                     </ul>
                 </nav>
@@ -141,11 +160,10 @@
         <!-- ============================================================== -->
         <div class="page-wrapper">
 
-            @yield('content')            
+            @yield('main')            
 
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by
-                <a href="https://www.wrappixel.com">WrapPixel</a>.
+                All Rights Reserved by Dhump WaterFitz
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
