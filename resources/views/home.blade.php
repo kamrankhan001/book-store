@@ -29,7 +29,14 @@
                     @else
                         <ul>
                             @foreach($favoriteBooks as $book)
-                                <li>{{ $book->book_name }}</li>
+                                <li class="mb-2">
+                                    {{ $book->book_name }}
+                                    <form action="{{ route('books.removeFavorite', ['book'=>$book->id]) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </li>
                             @endforeach
                         </ul>
                     @endif

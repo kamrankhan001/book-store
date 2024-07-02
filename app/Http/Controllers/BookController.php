@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
-    // Other existing methods...
-
     /**
      * Add a book to the user's favorites.
      */
@@ -24,10 +22,10 @@ class BookController extends Controller
     /**
      * Remove a book from the user's favorites.
      */
-    public function removeFavorite(Book $book)
+    public function removeFavorite($bookId)
     {
         $user = Auth::user();
-        $user->favoriteBooks()->detach($book->id);
+        $user->favoriteBooks()->detach($bookId);
 
         return redirect()->back()->with('success', 'Book removed from favorites.');
     }

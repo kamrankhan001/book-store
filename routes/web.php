@@ -5,6 +5,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\BookController as UserBookController;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [GuestController::class, 'index'])->name('home');
@@ -16,8 +17,8 @@ Auth::routes();
 Route::middleware(['auth', 'access-level:user'])
     ->prefix('u')
     ->group(function () {
-        Route::post('/books/{book}/favorite', [BookController::class, 'addFavorite'])->name('books.addFavorite');
-        Route::delete('/books/{book}/favorite', [BookController::class, 'removeFavorite'])->name('books.removeFavorite');
+        Route::post('/books/{book}/favorite', [UserBookController::class, 'addFavorite'])->name('books.addFavorite');
+        Route::delete('/books/{book}/favorite', [UserBookController::class, 'removeFavorite'])->name('books.removeFavorite');
 
         Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
         Route::get('/profile/edit', [HomeController::class, 'edit'])->name('profile.edit');
