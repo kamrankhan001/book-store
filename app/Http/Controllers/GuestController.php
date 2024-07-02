@@ -19,4 +19,14 @@ class GuestController extends Controller
         return view('book-view', compact('book'));
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $books = Book::where('book_name', 'LIKE', "%{$query}%")
+                    ->orWhere('description', 'LIKE', "%{$query}%")
+                    ->get();
+
+        return view('search-results', compact('books', 'query'));
+    }
+
 }

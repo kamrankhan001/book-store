@@ -106,4 +106,10 @@ class UserController extends Controller
 
         return redirect()->route('user.index')->with('success', 'User deleted successfully.');
     }
+
+    public function usersWithFavorites()
+    {
+        $users = User::with('favoriteBooks')->get();
+        return view('admin.user.favorite-book', compact('users'));
+    }
 }

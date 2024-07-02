@@ -137,6 +137,11 @@
                                 aria-expanded="false"><i class="fas fa-user"></i><span
                                     class="hide-menu">Users</span></a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.user.favorites')}}"
+                                aria-expanded="false"><i class="fas fa-heart"></i><span
+                                    class="hide-menu">User Favoriate</span></a>
+                        </li>
                         <div class="class="dropdown-divider"></div>
                         <li class="sidebar-item">
                             <form action="{{ route('logout') }}" method="POST">
