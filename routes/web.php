@@ -21,7 +21,10 @@ Route::middleware(['auth', 'access-level:user'])->group(function () {
 });
   
 // Admin Routes
-Route::middleware(['auth', 'access-level:admin'])->group(function () {
+Route::middleware(['auth', 'access-level:admin'])->prefix('admin')->group(function () {
   
-    Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::resource('/user', UserController::class);
+
 });

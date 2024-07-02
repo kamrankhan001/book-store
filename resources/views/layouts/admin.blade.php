@@ -133,7 +133,7 @@
                                     class="hide-menu">Books</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('user.index')}}"
                                 aria-expanded="false"><i class="fas fa-user"></i><span
                                     class="hide-menu">Users</span></a>
                         </li>
