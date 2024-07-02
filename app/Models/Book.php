@@ -15,4 +15,9 @@ class Book extends Model
         'cover_path',
         'price',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'book_user');
+    }
 }

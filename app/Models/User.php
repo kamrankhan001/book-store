@@ -38,7 +38,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
+    public function favoriteBooks()
+    {
+        return $this->belongsToMany(Book::class, 'book_user');
+    }
+    
     protected function type(): Attribute
     {
         return new Attribute(get: fn($value) => $value == 2 ? 'admin' : 'user');

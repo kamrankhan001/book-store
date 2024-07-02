@@ -10,7 +10,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$book->book_name}}</h5>
                             <p class="card-text">{{$book->description}}</p>
-                            <a href="#">Read More</a>
+                            <a href="{{route('show', ['id'=>$book->id])}}">Read More</a>
                         </div>
                     </div>
                 </div>

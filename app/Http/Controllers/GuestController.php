@@ -12,4 +12,11 @@ class GuestController extends Controller
         $books = Book::all();
         return view('leading', compact('books'));
     }
+
+    public function show(string $id)
+    {
+        $book = Book::findOrFail($id);
+        return view('book-view', compact('book'));
+    }
+
 }
